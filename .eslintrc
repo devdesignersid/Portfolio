@@ -1,8 +1,7 @@
 {
     "extends": [
-        'airbnb',
+        "airbnb",
         "prettier",
-        "prettier/react",
         "eslint:recommended",
         "plugin:react/recommended",
         "plugin:prettier/recommended"
@@ -15,16 +14,17 @@
     "env": {
         "browser": true,
         "node": true,
-        "es6": true
-    }
-    "plugins": ["prettier","react"],
+        "es6": true,
+        "cypress/globals": true
+    },
+    "plugins": ["prettier", "react", "cypress"],
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
         },
         "ecmaVersion": "2018",
         "sourceType": "module",
-    }
+    },
     "rules": {
         "prettier/prettier": ["error"],
         "import/no-unresolved": "off",
