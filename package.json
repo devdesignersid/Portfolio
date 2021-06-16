@@ -1,0 +1,52 @@
+{
+  "name": "portfolio",
+  "version": "0.1.0",
+  "description": "Sid's personal website",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "cross-env GATSBY_GRAPHQL_IDE=playground gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "server": "gatsby serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devdesignersid/portfolio.git"
+  },
+  "keywords": [
+    "Portfolio",
+    "Siddharth.S.Kumar"
+  ],
+  "author": "Siddharth S Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devdesignersid/portfolio/issues"
+  },
+  "homepage": "https://github.com/devdesignersid/portfolio#readme",
+  "dependencies": {
+    "@emotion/core": "^11.0.0",
+    "@emotion/styled": "^11.3.0",
+    "gatsby": "^3.7.1",
+    "gatsby-plugin-emotion": "^6.7.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "^7.28.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "prettier": "^2.3.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
