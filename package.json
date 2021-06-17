@@ -10,7 +10,8 @@
     "start": "npm run develop",
     "server": "gatsby serve",
     "cy:open": "cypress open",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "jest"
   },
   "husky": {
     "hooks": {
@@ -43,6 +44,9 @@
   },
   "devDependencies": {
     "@testing-library/cypress": "^7.0.6",
+    "@testing-library/react": "^11.2.7",
+    "babel-jest": "^27.0.2",
+    "babel-preset-gatsby": "^1.7.1",
     "cypress": "^7.5.0",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "^7.28.0",
@@ -55,6 +59,8 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "husky": "^6.0.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.0.4",
     "lint-staged": "^11.0.0",
     "prettier": "^2.3.1"
   },
