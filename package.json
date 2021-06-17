@@ -33,6 +33,7 @@
   },
   "homepage": "https://github.com/devdesignersid/portfolio#readme",
   "dependencies": {
+    "@artsy/fresnel": "^1.7.0",
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
