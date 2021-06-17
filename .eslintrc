@@ -29,5 +29,6 @@
         "prettier/prettier": ["error"],
         "import/no-unresolved": "off",
         "import/order": "off",
+        "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx"]}]
     }
 }
