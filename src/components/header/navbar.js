@@ -35,13 +35,16 @@ const NavBar = () => (
   <NavContainer>
     <NavMenu>
       <NavItem>
-        <NavLink to="/blog/">Blog</NavLink>
+        <NavLink to="/projects/">Projets</NavLink>
       </NavItem>
       <NavItem>
         <NavLink to="/about/">About</NavLink>
       </NavItem>
       <NavItem>
-        <NavLink to="/blog/">Contact</NavLink>
+        <NavLink to="/contact/">Contact</NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink to="/blog/">Blog</NavLink>
       </NavItem>
     </NavMenu>
   </NavContainer>

@@ -5,13 +5,18 @@ import styled from "@emotion/styled";
 
 const Button = styled.button`
   z-index: 99;
-  cursor: pointer;
-  background: none repeat scroll 0 0 transparent;
-  border: medium none;
   margin: 0;
   padding: 0;
   text-decoration: none;
   text-indent: 0;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  line-height: 0;
 
   &::-moz-focus-inner {
     border: 0;
