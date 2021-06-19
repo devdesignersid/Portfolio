@@ -1,9 +1,19 @@
 /* eslint-disable import/prefer-default-export */
 
-import * as React from "react";
-
+import React from "react";
 import { MediaContextProvider } from "./src/Media";
+import { css, Global } from "@emotion/react";
+import emotionNormalize from "emotion-normalize";
 
 export const wrapRootElement = ({ element }) => (
-  <MediaContextProvider>{element}</MediaContextProvider>
+  <>
+    <Global
+      styles={css`
+        ${emotionNormalize}
+      `}
+    />
+    <MediaContextProvider>{element}</MediaContextProvider>
+  </>
 );
+
+export default wrapRootElement;
