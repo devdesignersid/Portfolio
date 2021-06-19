@@ -16,7 +16,7 @@ const HeaderLeftSection = styled.div`
   display: flex;
 `;
 
-const HeaderRightSection = styled.nav`
+const HeaderRightSection = styled.div`
   display: flex;
 `;
 
