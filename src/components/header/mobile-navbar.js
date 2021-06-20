@@ -22,6 +22,7 @@ const Nav = styled.nav`
   -moz-transition: height 0.3s ease;
   -o-transition: height 0.3s ease;
   transition: height 0.3s ease;
+  z-index: 999;
 `;
 
 const NavMenu = styled.ul`
