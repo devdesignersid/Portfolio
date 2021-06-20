@@ -7,14 +7,12 @@ import { Media } from "../../Media";
 import Logo from "./logo";
 import NavBar from "./navbar";
 import MobileNavBar from "./mobile-navbar";
+import WraperContainer from "./wrapper";
 import DarkModeToggle from "react-dark-mode-toggle";
 
 const HeaderContainer = styled.header`
   background-color: ${(props) =>
     props.theme ? props.theme.background : "yellow"};
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
 `;
 
 const HeaderLeftSection = styled.div`
@@ -32,36 +30,38 @@ const Header = (props) => {
 
   return (
     <HeaderContainer theme={theme}>
-      <HeaderLeftSection>
-        <Logo />
-      </HeaderLeftSection>
-      <HeaderRightSection>
-        <ClassNames>
-          {({ css, cx }) => (
-            <DarkModeToggle
-              size="52px"
-              checked={props.isDark}
-              onChange={props.setIsDark}
-              className={cx(
-                "some-class",
-                css`
-                  & > div {
-                    width: 83.8px !important;
-                    height: 88.8px !important;
-                  }
-                  margin-right: 15px;
-                `,
-              )}
-            />
-          )}
-        </ClassNames>
-        <Media greaterThanOrEqual="md">
-          <NavBar />
-        </Media>
-        <Media lessThan="md">
-          <MobileNavBar />
-        </Media>
-      </HeaderRightSection>
+      <WraperContainer>
+        <HeaderLeftSection>
+          <Logo />
+        </HeaderLeftSection>
+        <HeaderRightSection>
+          <ClassNames>
+            {({ css, cx }) => (
+              <DarkModeToggle
+                size="52px"
+                checked={props.isDark}
+                onChange={props.setIsDark}
+                className={cx(
+                  "some-class",
+                  css`
+                    & > div {
+                      width: 83.8px !important;
+                      height: 88.8px !important;
+                    }
+                    margin-right: 15px;
+                  `,
+                )}
+              />
+            )}
+          </ClassNames>
+          <Media greaterThanOrEqual="md">
+            <NavBar />
+          </Media>
+          <Media lessThan="md">
+            <MobileNavBar />
+          </Media>
+        </HeaderRightSection>
+      </WraperContainer>
     </HeaderContainer>
   );
 };
