@@ -24,6 +24,13 @@ const Button = styled.button`
   }
 `;
 
+const Svg = styled.svg`
+  & > path {
+    stroke: ${(props) =>
+      props.theme ? props.theme.accentColorPurple : "inherit"};
+  }
+`;
+
 const Path = (props) => (
   <motion.path
     fill="transparent"
@@ -36,9 +43,9 @@ const Path = (props) => (
 
 const transition = { duration: 0.3 };
 
-const MenuToggle = ({ toggle, isOpen }) => (
+const MenuToggle = ({ toggle, isOpen, theme }) => (
   <Button onClick={toggle}>
-    <svg width="23" height="23" viewBox="0 0 23 23">
+    <Svg theme={theme} width="23" height="23" viewBox="0 0 23 23">
       <Path
         animate={isOpen ? "open" : "closed"}
         initial={false}
@@ -68,13 +75,14 @@ const MenuToggle = ({ toggle, isOpen }) => (
         }}
         transition={transition}
       />
-    </svg>
+    </Svg>
   </Button>
 );
 
 MenuToggle.propTypes = {
   toggle: PropTypes.func.isRequired,
   isOpen: PropTypes.bool.isRequired,
+  theme: PropTypes.shape({}).isRequired,
 };
 
 export default MenuToggle;

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "@emotion/styled";
 import { Link } from "gatsby";
+import PropTypes from "prop-types";
 
 import MenuToggle from "./menu-toggle";
 
@@ -12,16 +13,16 @@ const NavContainer = styled.div`
 
 const Nav = styled.nav`
   position: fixed;
-  top: 48px;
+  top: 62px;
   left: 0;
   width: 100%;
-  background-color: #f5f5f5;
   height: ${(props) => (props.isOpen ? `${props.navMenuHeight}px` : "0")};
   overflow: hidden;
-  -webkit-transition: height 0.3s ease;
-  -moz-transition: height 0.3s ease;
-  -o-transition: height 0.3s ease;
   transition: height 0.3s ease;
+  border-bottom: ${(props) =>
+    props.theme && props.isOpen
+      ? `5px solid ${props.theme.accentColorPurple}`
+      : "none"};
   z-index: 999;
 `;
 
@@ -35,13 +36,21 @@ const NavMenu = styled.ul`
   display: flex;
   list-style: none;
   flex-direction: column;
+  color: ${(props) => (props.theme ? props.theme.secondaryColor : "#0000ff")};
+  background-color: ${(props) =>
+    props.theme ? props.theme.primaryColor : "#ffffff"};
+  transition: background-color 0.3s linear;
 `;
 
 const NavItem = styled.li`
-  color: #222;
   font-size: 1em;
   display: flex;
   box-sizing: border-box;
+  color: inherit;
+
+  &: first-of-type {
+    margin-top: 15px;
+  }
 
   &:last-child > a {
     border-bottom: none;
@@ -56,13 +65,12 @@ const NavLink = styled(Link)`
   font-size: inherit;
   display: block;
   padding-bottom: 15px;
-  border-bottom: 2px solid #f1f1f1;
   margin-bottom: 15px;
   width: 100%;
 `;
 
-const MobileNabBar = () => {
-  const [isOpen, setOpen] = useState(false);
+const MobileNabBar = (props) => {
+  const { theme, isOpen, setOpen } = props;
   const [navMenuHeight, setNavMenuHeight] = useState(0);
   const navMenu = useRef(null);
 
@@ -76,9 +84,14 @@ const MobileNabBar = () => {
 
   return (
     <NavContainer>
-      <MenuToggle isOpen={isOpen} toggle={() => setOpen(!isOpen)} />
+      <MenuToggle
+        theme={theme}
+        isOpen={isOpen}
+        toggle={() => setOpen(!isOpen)}
+      />
+
       <Nav navMenuHeight={navMenuHeight} isOpen={isOpen}>
-        <NavMenu ref={navMenu}>
+        <NavMenu ref={navMenu} theme={theme}>
           <NavItem>
             <NavLink to="/projects/">Projets</NavLink>
           </NavItem>
@@ -95,6 +108,12 @@ const MobileNabBar = () => {
       </Nav>
     </NavContainer>
   );
+};
+
+MobileNabBar.propTypes = {
+  theme: PropTypes.shape({}).isRequired,
+  isOpen: PropTypes.bool.isRequired,
+  setOpen: PropTypes.func.isRequired,
 };
 
 export default MobileNabBar;
