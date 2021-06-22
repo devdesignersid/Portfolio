@@ -55,7 +55,13 @@ const Header = (props) => {
               <DarkModeToggle
                 size="52px"
                 checked={props.isDark}
-                onChange={props.setIsDark}
+                onChange={() => {
+                  if (props.isDark) {
+                    props.setMode("light");
+                  } else {
+                    props.setMode("dark");
+                  }
+                }}
                 className={cx(
                   "darkModeToggle",
                   css`
@@ -83,7 +89,7 @@ const Header = (props) => {
 
 Header.propTypes = {
   isDark: PropTypes.bool.isRequired,
-  setIsDark: PropTypes.func.isRequired,
+  setMode: PropTypes.func.isRequired,
 };
 
 export default Header;

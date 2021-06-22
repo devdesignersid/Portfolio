@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./header";
 import Main from "./main";
 import Footer from "./footer";
@@ -8,11 +8,34 @@ import PropTypes from "prop-types";
 
 const Layout = ({ children }) => {
   const [isDark, setIsDark] = useState(false);
+  const [componentMounted, setComponentMounted] = useState(false);
 
+  const setMode = (mode) => {
+    window.localStorage.setItem("theme", mode);
+    if (mode === "dark") {
+      setIsDark(true);
+    } else {
+      setIsDark(false);
+    }
+  };
+
+  useEffect(() => {
+    const localTheme = window.localStorage.getItem("theme");
+    if (localTheme === "dark") {
+      setIsDark(true);
+    } else {
+      setMode("light");
+    }
+    setComponentMounted(true);
+  }, []);
+
+  if (!componentMounted) {
+    return <div />;
+  }
   return (
     <>
       <ThemeProvider theme={isDark ? themeDark : themeLight}>
-        <Header isDark={isDark} setIsDark={setIsDark} />
+        <Header setMode={setMode} isDark={isDark} setIsDark={setIsDark} />
         <Main>{children}</Main>
         <Footer />
       </ThemeProvider>
