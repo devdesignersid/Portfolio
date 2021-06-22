@@ -14,6 +14,9 @@ const NavMenu = styled.ul`
   display: flex;
   height: 100%;
   list-style: none;
+  color: ${(props) => (props.theme ? props.theme.secondaryColor : "#0000ff")};
+    props.theme ? props.theme.background : "#ffffff"};
+  transition: background-color 0.3s linear;
 `;
 
 const NavItem = styled.li`
@@ -23,12 +26,15 @@ const NavItem = styled.li`
   font-size: 14px;
   align-items: center;
   justify-content: center;
+  color: inherit;
+  background-color: inherit;
 `;
 
 const NavLink = styled(Link)`
   text-decoration: none;
   color: inherit;
   font-size: inherit;
+  background-color: inherit;
 `;
 
 const NavBar = () => (
