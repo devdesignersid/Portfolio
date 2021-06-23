@@ -21,11 +21,19 @@ const Layout = ({ children }) => {
 
   useEffect(() => {
     const localTheme = window.localStorage.getItem("theme");
-    if (localTheme === "dark") {
+
+    if (
+      window.matchMedia &&
+      window.matchMedia(`(prefers-color-scheme : dark)`).matches &&
+      !localTheme
+    ) {
+      setMode("dark");
+    } else if (localTheme === "dark") {
       setIsDark(true);
     } else {
       setMode("light");
     }
+
     setComponentMounted(true);
   }, []);
 
