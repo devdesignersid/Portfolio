@@ -5,7 +5,7 @@ const themeDark = {
   accentColorGreen: "#5ac5ad",
   accentColorOrange: "#d35c4a",
   accentColorBlue: "#3178af",
-  accentColorYellow: "#785B33",
+  accentColorYellow: "#f5bc6a",
   accentColorRed: "#926158",
   accentColorPurple: "#ad9ef8",
 };
