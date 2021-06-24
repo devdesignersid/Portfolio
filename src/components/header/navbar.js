@@ -34,6 +34,7 @@ const NavLink = styled(Link)`
   text-decoration: none;
   color: inherit;
   font-size: inherit;
+  font-family: "IBM Plex Mono", monospace;
   background-color: inherit;
 `;
 

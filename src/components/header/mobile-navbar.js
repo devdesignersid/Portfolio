@@ -43,6 +43,7 @@ const NavItem = styled.li`
   display: flex;
   box-sizing: border-box;
   color: inherit;
+  font-family: "IBM Plex Mono", monospace;
 
   &: first-of-type {
     margin-top: 15px;
