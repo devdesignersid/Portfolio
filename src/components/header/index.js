@@ -8,7 +8,7 @@ import Logo from "./logo";
 import NavBar from "./navbar";
 import MobileNavBar from "./mobile-navbar";
 import WraperContainer from "./wrapper";
-import DarkModeToggle from "react-dark-mode-toggle";
+import { DarkModeSwitch } from "react-toggle-dark-mode";
 
 const HeaderContainer = styled.header`
   background-color: ${(props) =>
@@ -50,8 +50,10 @@ const Header = (props) => {
         <HeaderRightSection>
           <ClassNames>
             {({ css, cx }) => (
-              <DarkModeToggle
-                size="52px"
+              <DarkModeSwitch
+                style={{ marginBottom: "2rem" }}
+                moonColor="#fcf5e4"
+                sunColor="#f5bc6a"
                 checked={props.isDark}
                 onChange={() => {
                   if (props.isDark) {
@@ -60,13 +62,11 @@ const Header = (props) => {
                     props.setMode("dark");
                   }
                 }}
+                size={24}
                 className={cx(
                   "darkModeToggle",
                   css`
-                    & > div {
-                      width: 83.8px !important;
-                      height: 88.8px !important;
-                    }
+                    margin-bottom: 4px !important;
                     margin-right: 15px;
                   `,
                 )}
