@@ -41,6 +41,7 @@
     "framer-motion": "^4.1.17",
     "gatsby": "^3.7.1",
     "gatsby-plugin-emotion": "^6.7.1",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-image": "^1.7.1",
     "gatsby-plugin-sharp": "^3.7.1",
     "gatsby-source-filesystem": "^3.7.1",
