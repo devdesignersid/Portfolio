@@ -19,10 +19,6 @@ const Nav = styled.nav`
   height: ${(props) => (props.isOpen ? `${props.navMenuHeight}px` : "0")};
   overflow: hidden;
   transition: height 0.3s ease;
-  border-bottom: ${(props) =>
-    props.theme && props.isOpen
-      ? `5px solid ${props.theme.accentColorPurple}`
-      : "none"};
   z-index: 999;
 `;
 

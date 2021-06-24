@@ -1,14 +1,13 @@
 const themeDark = {
-  background: "#111118",
-  primaryColor: "#e0e2ed",
-  secondaryColor: "#434655",
-  accentColorGreen: "#68b79e",
-  accentColorOrange: "#e5805d",
-  accentColorBlue: "#688bf7",
-  accentColorYellow: "#e7c155",
-  accentColorRed: "#c57a6b",
-  accentColorPurple: "#b2acf9",
-  textColor: "#a9aaba",
+  background: "#262224",
+  primaryColor: "#fcf5e4",
+  secondaryColor: "#9c9a9b",
+  accentColorGreen: "#5ac5ad",
+  accentColorOrange: "#d35c4a",
+  accentColorBlue: "#3178af",
+  accentColorYellow: "#785B33",
+  accentColorRed: "#926158",
+  accentColorPurple: "#ad9ef8",
 };
 
 export default themeDark;

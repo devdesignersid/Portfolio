@@ -4,11 +4,11 @@ import Layout from "../components/layout";
 import styled from "@emotion/styled";
 
 const StyledHeading = styled.h1`
-  color: ${(props) => (props.theme ? props.theme.primaryColor : "red")};
+  color: ${(props) => (props.theme ? props.theme.primaryColor : "#000000")};
 `;
 
 const StyledParagraph = styled.p`
-  color: ${(props) => (props.theme ? props.theme.textColor : "000000")};
+  color: ${(props) => (props.theme ? props.theme.secondaryColor : "#000000")};
 `;
 
 const Index = () => {

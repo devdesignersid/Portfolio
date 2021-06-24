@@ -1,14 +1,13 @@
 const themeLight = {
-  background: "#e0e2ed",
-  primaryColor: "#111118",
-  secondaryColor: "#a9aaba",
-  accentColorGreen: "#68b79e",
-  accentColorOrange: "#e5805d",
+  background: "#fcf8ea",
+  primaryColor: "#262224",
+  secondaryColor: "#685e63",
+  accentColorGreen: "#4f7166",
+  accentColorOrange: "#d45d4d",
   accentColorBlue: "#688bf7",
   accentColorYellow: "#e7c155",
-  accentColorRed: "#c57a6b",
-  accentColorPurple: "#b2acf9",
-  textColor: "#434655",
+  accentColorRed: "#ad9ef8",
+  accentColorPurple: "#635f90",
 };
 
 export default themeLight;

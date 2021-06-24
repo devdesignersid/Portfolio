@@ -12,11 +12,9 @@ import DarkModeToggle from "react-dark-mode-toggle";
 
 const HeaderContainer = styled.header`
   background-color: ${(props) =>
-    props.theme ? props.theme.primaryColor : "#ffffff"};
+    props.theme ? props.theme.background : "#ffffff"};
   color: ${(props) => (props.theme ? props.theme.secondaryColor : "#0000000")};
   ${(props) => (props.theme ? props.theme.primaryColor : "#0000ff")};
-  border-bottom: ${(props) =>
-    props.theme ? `5px solid ${props.theme.accentColorPurple}` : "none"};
   transition: background-color 0.3s linear;
 
   @media (max-width: 768px) {
