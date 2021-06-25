@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "@emotion/styled";
 import { useTheme, ClassNames } from "@emotion/react";
 import PropTypes from "prop-types";
@@ -12,10 +12,15 @@ import { DarkModeSwitch } from "react-toggle-dark-mode";
 
 const HeaderContainer = styled.header`
   background-color: ${(props) =>
-    props.theme ? props.theme.background : "#ffffff"};
+    props.theme && !props.isNavMenuOpen
+      ? `rgba(${props.theme.backgroundRGB}), 0.85`
+      : "transparent"};
   color: ${(props) => (props.theme ? props.theme.secondaryColor : "#0000000")};
   ${(props) => (props.theme ? props.theme.primaryColor : "#0000ff")};
-  transition: background-color 0.3s linear;
+  position: fixed;
+  box-sizing: border-box;
+  width: 100%;
+  z-index: 998;
 
   @media (max-width: 768px) {
     padding-left: 15px;
@@ -39,10 +44,10 @@ const HeaderRightSection = styled.div`
 
 const Header = (props) => {
   const theme = useTheme();
-  const [isOpen, setOpen] = useState(false);
+  const { isNavMenuOpen, setIsNavMenuOpen } = props;
 
   return (
-    <HeaderContainer isOpen={isOpen} theme={theme}>
+    <HeaderContainer isNavMenuOpen={isNavMenuOpen} theme={theme}>
       <WraperContainer>
         <HeaderLeftSection>
           <Logo />
@@ -77,7 +82,11 @@ const Header = (props) => {
             <NavBar theme={theme} />
           </Media>
           <Media lessThan="md">
-            <MobileNavBar isOpen={isOpen} setOpen={setOpen} theme={theme} />
+            <MobileNavBar
+              isNavMenuOpen={isNavMenuOpen}
+              setIsNavMenuOpen={setIsNavMenuOpen}
+              theme={theme}
+            />
           </Media>
         </HeaderRightSection>
       </WraperContainer>
@@ -88,6 +97,8 @@ const Header = (props) => {
 Header.propTypes = {
   isDark: PropTypes.bool.isRequired,
   setMode: PropTypes.func.isRequired,
+  isNavMenuOpen: PropTypes.bool.isRequired,
+  setIsNavMenuOpen: PropTypes.func.isRequired,
 };
 
 export default Header;

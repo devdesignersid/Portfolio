@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 
 const Button = styled.button`
-  z-index: 99;
+  z-index: 1000;
   margin: 0;
   padding: 0;
   text-decoration: none;
@@ -43,11 +43,11 @@ const Path = (props) => (
 
 const transition = { duration: 0.3 };
 
-const MenuToggle = ({ toggle, isOpen, theme }) => (
+const MenuToggle = ({ toggle, isNavMenuOpen, theme }) => (
   <Button onClick={toggle}>
     <Svg theme={theme} width="23" height="23" viewBox="0 0 23 23">
       <Path
-        animate={isOpen ? "open" : "closed"}
+        animate={isNavMenuOpen ? "open" : "closed"}
         initial={false}
         variants={{
           closed: { d: "M 2 2.5 L 20 2.5", stroke: "hsl(0, 0%, 18%)" },
@@ -58,7 +58,7 @@ const MenuToggle = ({ toggle, isOpen, theme }) => (
       <Path
         d="M 2 9.423 L 20 9.423"
         stroke="hsl(0, 0%, 18%)"
-        animate={isOpen ? "open" : "closed"}
+        animate={isNavMenuOpen ? "open" : "closed"}
         initial={false}
         variants={{
           closed: { opacity: 1 },
@@ -67,7 +67,7 @@ const MenuToggle = ({ toggle, isOpen, theme }) => (
         transition={transition}
       />
       <Path
-        animate={isOpen ? "open" : "closed"}
+        animate={isNavMenuOpen ? "open" : "closed"}
         initial={false}
         variants={{
           closed: { d: "M 2 16.346 L 20 16.346", stroke: "hsl(0, 0%, 18%)" },
@@ -81,7 +81,7 @@ const MenuToggle = ({ toggle, isOpen, theme }) => (
 
 MenuToggle.propTypes = {
   toggle: PropTypes.func.isRequired,
-  isOpen: PropTypes.bool.isRequired,
+  isNavMenuOpen: PropTypes.bool.isRequired,
   theme: PropTypes.shape({}).isRequired,
 };
 
