@@ -8,6 +8,10 @@ const themeLight = {
   accentColorYellow: "#e7c155",
   accentColorRed: "#ad9ef8",
   accentColorPurple: "#635f90",
+  backgroundLighten: "#fcf8ec",
+  backgroundDarken: "#2a2206",
+  primaryLighten: "#544b50",
+  backgroundRGB: "252, 248, 234",
 };
 
 export default themeLight;
