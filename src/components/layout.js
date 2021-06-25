@@ -3,12 +3,29 @@ import Header from "./header";
 import Main from "./main";
 import Footer from "./footer";
 import { themeLight, themeDark } from "../themes";
-import { ThemeProvider } from "@emotion/react";
 import PropTypes from "prop-types";
+import { css, ThemeProvider, Global, useTheme } from "@emotion/react";
+
+const GlobalStyles = () => {
+  const theme = useTheme();
+  return (
+    <Global
+      styles={css`
+        body {
+          background-color: ${theme.background};
+          -webkit-font-smoothing: subpixel-antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          font-smoooth: always;
+        }
+      `}
+    />
+  );
+};
 
 const Layout = ({ children }) => {
   const [isDark, setIsDark] = useState(false);
   const [componentMounted, setComponentMounted] = useState(false);
+  const [isNavMenuOpen, setIsNavMenuOpen] = useState(false);
 
   const setMode = (mode) => {
     window.localStorage.setItem("theme", mode);
@@ -43,9 +60,21 @@ const Layout = ({ children }) => {
   return (
     <>
       <ThemeProvider theme={isDark ? themeDark : themeLight}>
-        <Header setMode={setMode} isDark={isDark} setIsDark={setIsDark} />
-        <Main>{children}</Main>
-        <Footer />
+        <GlobalStyles />
+        <Header
+          isNavMenuOpen={isNavMenuOpen}
+          setIsNavMenuOpen={setIsNavMenuOpen}
+          setMode={setMode}
+          isDark={isDark}
+          setIsDark={setIsDark}
+        />
+        <Main isNavMenuOpen={isNavMenuOpen} setIsNavMenuOpen={setIsNavMenuOpen}>
+          {children}
+        </Main>
+        <Footer
+          isNavMenuOpen={isNavMenuOpen}
+          setIsNavMenuOpen={setIsNavMenuOpen}
+        />
       </ThemeProvider>
     </>
   );
