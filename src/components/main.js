@@ -10,10 +10,12 @@ const MainContainer = styled.main`
     props.theme ? props.theme.background : "#ffffff"};
   transition: background-color 0.3s linear;
   color: inherit;
+  filter: ${(props) =>
+    props.isNavMenuOpen ? `blur(5px) brightness(0.7)` : "none"};
 `;
 
 const Main = (props) => {
-  const { children } = props;
+  const { children, isNavMenuOpen } = props;
   const theme = useTheme();
   const childrenWithProps = React.Children.map(children, (child) => {
     if (React.isValidElement(child)) {
@@ -23,7 +25,7 @@ const Main = (props) => {
   });
 
   return (
-    <MainContainer theme={theme}>
+    <MainContainer isNavMenuOpen={isNavMenuOpen} theme={theme}>
       <Container>{childrenWithProps}</Container>
     </MainContainer>
   );
@@ -31,6 +33,7 @@ const Main = (props) => {
 
 Main.propTypes = {
   children: PropTypes.node.isRequired,
+  isNavMenuOpen: PropTypes.bool.isRequired,
 };
 
 export default Main;
