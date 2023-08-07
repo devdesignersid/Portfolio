@@ -9,6 +9,10 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      spacing: {
+        sm: '8px',
+        lg: '12px',
+      },
       fontFamily: {
         primary: ['var(--font-primary)'],
         secondary: ['var(--font-secondary)'],
@@ -16,11 +20,11 @@ module.exports = {
       },
       colors: {
         portfolio: {
-          background: "var(--background)",
-          text: "var(--text)"
-        }
+          background: 'var(--background)',
+          text: 'var(--text)',
+        },
       },
     },
   },
   plugins: [],
-}
+};
