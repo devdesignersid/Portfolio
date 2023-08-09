@@ -1,3 +1,11 @@
+import { Footer, Header, Main } from './_components';
+
 export default function Home() {
-  return <main className="">Welcome Home!</main>;
+  return (
+    <main>
+      <Header />
+      <Main />
+      <Footer />
+    </main>
+  );
 }
