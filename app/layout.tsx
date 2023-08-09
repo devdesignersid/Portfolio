@@ -4,13 +4,13 @@ import { Merriweather, Nunito, Heebo } from 'next/font/google';
 
 const primaryFont = Merriweather({
   subsets: ['latin'],
-  weight: '400',
+  weight: '700',
   variable: '--font-primary',
   display: 'swap',
 });
 const secondaryFont = Nunito({
   subsets: ['latin'],
-  weight: '400',
+  weight: '500',
   variable: '--font-secondary',
   display: 'swap',
 });
@@ -33,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body
         className={[
           primaryFont.variable,
