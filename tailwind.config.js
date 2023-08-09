@@ -10,8 +10,9 @@ module.exports = {
   theme: {
     extend: {
       spacing: {
-        sm: '8px',
-        lg: '12px',
+        small: '8px',
+        medium: '12px',
+        large: '16px',
       },
       fontFamily: {
         primary: ['var(--font-primary)'],
