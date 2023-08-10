@@ -6,7 +6,7 @@ type MobileNavProps = {
 };
 
 export default function MobileNav({ isOpen }: MobileNavProps) {
-  const menuItems = ['About', 'Experience', 'Contact', 'Resume'];
+  const menuItems = ['About', 'Experience', 'Contact'];
 
   return (
     <nav
@@ -25,6 +25,14 @@ export default function MobileNav({ isOpen }: MobileNavProps) {
             </ScrollLink>
           </li>
         ))}
+        <li className='block px-small py-medium text-center font-secondary text-[#8A2BE2]'>
+          <a
+            className='rounded bg-[#8A2BE2] px-medium py-small !text-[#F0F4EF]'
+            href='/resume.pdf'
+          >
+            Resume
+          </a>
+        </li>
       </ul>
     </nav>
   );

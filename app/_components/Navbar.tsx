@@ -17,7 +17,7 @@ export default function Navbar() {
         <li>
           <a
             className='rounded bg-[#8A2BE2] px-medium py-small !text-[#F0F4EF]'
-            href='#'
+            href='/resume.pdf'
           >
             Resume
           </a>
