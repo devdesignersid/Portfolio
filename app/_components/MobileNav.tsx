@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollLink from './ScrollLink';
 
 type MobileNavProps = {
   isOpen: boolean;
@@ -16,12 +17,12 @@ export default function MobileNav({ isOpen }: MobileNavProps) {
       <ul className='flex w-full flex-col'>
         {menuItems.map((item, index) => (
           <li key={index}>
-            <a
-              href='#'
+            <ScrollLink
               className='block px-small py-medium text-center font-secondary text-[#8A2BE2]'
+              href={`#${item.toLowerCase()}`}
             >
               {item}
-            </a>
+            </ScrollLink>
           </li>
         ))}
       </ul>

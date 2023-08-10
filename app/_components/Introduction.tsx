@@ -1,8 +1,14 @@
+'use client';
+
 import React from 'react';
+import ScrollLink from './ScrollLink';
 
 export default function Introduction() {
   return (
-    <section className='flex h-[calc(100vh-104px)] items-center justify-center bg-portfolio-background px-[18px]'>
+    <section
+      id='intro'
+      className='flex h-[calc(100vh-104px)] items-center justify-center bg-portfolio-background px-[18px]'
+    >
       <div className='flex flex-col items-center text-portfolio-text'>
         <p className='mb-[8px] font-tertiary text-[14px]'>
           Greetings, Traveler! I am
@@ -17,12 +23,13 @@ export default function Introduction() {
         <p className='mt-small w-[250px] text-center font-tertiary text-[16px]'>
           Step into the Enchanted Realm of My Digital Odyssey
         </p>
-        <a
-          href='#'
+
+        <ScrollLink
+          href='#about'
           className='mt-[64px] inline-flex border-b-2 border-[#8A2BE2] font-secondary text-[14px] text-[#8A2BE2]'
         >
           Begin Your Journey &#8594;
-        </a>
+        </ScrollLink>
       </div>
     </section>
   );

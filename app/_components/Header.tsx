@@ -10,6 +10,7 @@ import MobileNav from './MobileNav';
 export default function Header() {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     if (isDarkMode) {
@@ -19,8 +20,20 @@ export default function Header() {
     }
   }, [isDarkMode]);
 
+  useEffect(() => {
+    const updateMobile = () => {
+      setIsMobile(window.innerWidth < 576);
+    };
+
+    updateMobile();
+    window.addEventListener('resize', updateMobile);
+    return () => {
+      window.removeEventListener('resize', updateMobile);
+    };
+  }, []);
+
   return (
-    <header className='sticky top-0 flex w-full items-center justify-between bg-portfolio-background px-large py-large'>
+    <header className='sticky top-0 z-50 flex w-full items-center justify-between bg-portfolio-background px-large py-large md:px-[32px]'>
       <Logo />
       <DarkModeSwitch
         className='mr-large'
@@ -32,12 +45,17 @@ export default function Header() {
         }}
         size={32}
       />
-      <HamburgerButton
-        isOpen={isMobileNavOpen}
-        handleClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
-      />
-      <MobileNav isOpen={isMobileNavOpen} />
-      <Navbar />
+      {isMobile ? (
+        <>
+          <HamburgerButton
+            isOpen={isMobileNavOpen}
+            handleClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
+          />
+          <MobileNav isOpen={isMobileNavOpen} />
+        </>
+      ) : (
+        <Navbar />
+      )}
     </header>
   );
 }
