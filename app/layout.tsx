@@ -10,7 +10,7 @@ const primaryFont = Merriweather({
 });
 const secondaryFont = Nunito({
   subsets: ['latin'],
-  weight: '500',
+  weight: ['400', '500', '600'],
   variable: '--font-secondary',
   display: 'swap',
 });

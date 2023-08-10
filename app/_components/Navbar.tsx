@@ -4,15 +4,30 @@ import ScrollLink from './ScrollLink';
 export default function Navbar() {
   return (
     <nav className=''>
-      <ul className='flex [&>li*:first-child]:ml-0  [&>li>a]:font-secondary [&>li>a]:text-[16px] [&>li>a]:text-[rgb(138,43,226)] [&>li]:ml-[24px]'>
+      <ul className='flex [&>li*:first-child]:ml-0   [&>li>a]:font-secondary [&>li>a]:text-[14px] [&>li>a]:font-[600] [&>li>a]:text-[rgb(138,43,226)] '>
         <li>
-          <ScrollLink href='#about'>About</ScrollLink>
+          <ScrollLink
+            className='transform-[bg,color]  mr-small px-medium py-small duration-200 hover:rounded hover:bg-[#B4CDED] hover:text-portfolio-background'
+            href='#about'
+          >
+            About
+          </ScrollLink>
         </li>
         <li>
-          <ScrollLink href='#experience'>Experience</ScrollLink>
+          <ScrollLink
+            className='transform-[bg,color] mr-small px-medium py-small duration-200 hover:rounded hover:bg-[#B4CDED] hover:text-portfolio-background'
+            href='#experience'
+          >
+            Experience
+          </ScrollLink>
         </li>
         <li>
-          <ScrollLink href='#contact'>Contact</ScrollLink>
+          <ScrollLink
+            className='transform-[bg,color] mr-small mr-small px-medium py-small duration-200 hover:rounded hover:bg-[#B4CDED] hover:text-portfolio-background'
+            href='#contact'
+          >
+            Contact
+          </ScrollLink>
         </li>
         <li>
           <a

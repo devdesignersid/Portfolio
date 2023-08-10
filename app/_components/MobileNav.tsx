@@ -11,21 +11,21 @@ export default function MobileNav({ isOpen }: MobileNavProps) {
   return (
     <nav
       className={`ease absolute left-[0] top-[104px] flex w-[100vw] overflow-y-hidden bg-portfolio-background transition-[max-height,padding] duration-300 ${
-        isOpen ? `max-h-60 py-[24px] shadow-xl` : `max-h-0 py-[0]`
+        isOpen ? `max-h-60 pb-[24px] shadow-xl` : `max-h-0 py-[0]`
       }`}
     >
       <ul className='flex w-full flex-col'>
         {menuItems.map((item, index) => (
           <li key={index}>
             <ScrollLink
-              className='block px-small py-medium text-center font-secondary text-[#8A2BE2]'
+              className='block px-small py-large text-center font-secondary text-[14px] !font-[600] text-[#8A2BE2]'
               href={`#${item.toLowerCase()}`}
             >
               {item}
             </ScrollLink>
           </li>
         ))}
-        <li className='block px-small py-medium text-center font-secondary text-[#8A2BE2]'>
+        <li className='mt-small block px-small py-medium text-center font-secondary text-[14px] font-[600] text-[#8A2BE2]'>
           <a
             className='rounded bg-[#8A2BE2] px-medium py-small !text-[#F0F4EF]'
             href='/resume.pdf'
