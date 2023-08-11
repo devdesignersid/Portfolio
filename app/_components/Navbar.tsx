@@ -23,7 +23,7 @@ export default function Navbar() {
         </li>
         <li>
           <ScrollLink
-            className='transform-[bg,color] mr-small mr-small px-medium py-small duration-200 hover:rounded hover:bg-[#B4CDED] hover:text-portfolio-background'
+            className='transform-[bg,color] mr-small px-medium py-small duration-200 hover:rounded hover:bg-[#B4CDED] hover:text-portfolio-background'
             href='#contact'
           >
             Contact
@@ -32,6 +32,8 @@ export default function Navbar() {
         <li>
           <a
             className='rounded bg-[#8A2BE2] px-medium py-small !text-[#F0F4EF]'
+            target='_blank'
+            rel='noreferrer'
             href='/resume.pdf'
           >
             Resume
