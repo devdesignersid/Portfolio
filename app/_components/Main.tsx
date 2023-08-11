@@ -5,8 +5,8 @@ import Experience from './Experience';
 import Projects from './Projects';
 
 /**
- * TODO: skills.
- * TODO: projects.
+ * TODO: Automatic theme selection based on system preference.
+ * TODO: Add favicon.
  */
 
 export default function Main() {
