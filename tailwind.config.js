@@ -22,6 +22,8 @@ module.exports = {
       colors: {
         portfolio: {
           background: 'var(--background)',
+          backgroundHighlight: 'var(--backgroundHighlight)',
+          secondaryBackgroundHighlight: 'var(--secondaryBackgroundHighlight)',
           text: 'var(--text)',
         },
       },

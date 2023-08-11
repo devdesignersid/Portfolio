@@ -6,12 +6,12 @@ type MobileNavProps = {
 };
 
 export default function MobileNav({ isOpen }: MobileNavProps) {
-  const menuItems = ['About', 'Experience', 'Contact'];
+  const menuItems = ['About', 'Experience', 'Projects', 'Contact'];
 
   return (
     <nav
       className={`ease absolute left-[0] top-[104px] flex w-[100vw] overflow-y-hidden bg-portfolio-background transition-[max-height,padding] duration-300 ${
-        isOpen ? `max-h-60 pb-[24px] shadow-xl` : `max-h-0 py-[0]`
+        isOpen ? `max-h-80 pb-[24px] shadow-xl` : `max-h-0 py-[0]`
       }`}
     >
       <ul className='flex w-full flex-col'>

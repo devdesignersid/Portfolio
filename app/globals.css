@@ -7,14 +7,23 @@
     --dark-background: #0D1821;
     --light-text: #0D1821;
     --dark-text: #F4F7FA;
+    --light-background-highlight: #FFFFFF;
+    --light-background-secondary-highlight: #F0F3F6;
+    --dark-background-highlight: #212B36;
+    --dark-background-secondary-highlight: #1A222B;
 }
 
 html {
     --background: var(--light-background);
-    --text: var(--light-text)
+    --text: var(--light-text);
+    --backgroundHighlight: var(--light-background-highlight);
+    --secondaryBackgroundHighlight: var(--light-background-secondary-highlight);
 }
 
 html.dark {
     --background: var(--dark-background);
-    --text: var(--dark-text)
+    --text: var(--dark-text);
+    --backgroundHighlight: var(--dark-background-highlight);
+    --secondaryBackgroundHighlight: var(--dark-background-secondary-highlight);
+
 }

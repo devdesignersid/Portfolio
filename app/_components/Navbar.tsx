@@ -24,6 +24,15 @@ export default function Navbar() {
         <li>
           <ScrollLink
             className='transform-[bg,color] mr-small px-medium py-small duration-200 hover:rounded hover:bg-[#B4CDED] hover:text-portfolio-background'
+            href='#projects'
+          >
+            Projects
+          </ScrollLink>
+        </li>
+
+        <li>
+          <ScrollLink
+            className='transform-[bg,color] mr-small px-medium py-small duration-200 hover:rounded hover:bg-[#B4CDED] hover:text-portfolio-background'
             href='#contact'
           >
             Contact

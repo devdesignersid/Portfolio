@@ -16,7 +16,7 @@ const secondaryFont = Nunito({
 });
 const tertiaryFont = Heebo({
   subsets: ['latin'],
-  weight: '400',
+  weight: ['400', '600'],
   variable: '--font-tertiary',
   display: 'swap',
 });
