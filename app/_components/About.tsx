@@ -7,7 +7,7 @@ export default function About() {
       className='flex h-[calc(100vh-64px)] flex-col justify-center bg-portfolio-background px-[18px]'
     >
       <div className='m-auto max-w-[320px] flex-col text-center md:max-w-[420px]'>
-        <h1 className=' mb-large font-primary text-[20px] text-[#f3b61f]'>
+        <h1 className=' mb-[32px] font-primary text-[20px] text-[#f3b61f]'>
           About Me
         </h1>
         <p className='mx-auto mb-small w-[300px] font-tertiary text-[14px] text-portfolio-text md:w-[400px] md:text-left lg:mb-large lg:text-[16px]'>
