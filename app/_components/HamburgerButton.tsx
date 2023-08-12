@@ -15,7 +15,7 @@ export default function HamburgerButton({
 
   return (
     <button
-      className='group flex h-[32px] w-[32px] flex-col items-center justify-center rounded '
+      className='group flex h-[32px] w-[32px] flex-col items-center justify-center rounded md:hidden '
       onClick={onClick}
     >
       <div

@@ -3,7 +3,7 @@ import ScrollLink from './ScrollLink';
 
 export default function Navbar() {
   return (
-    <nav className=''>
+    <nav className='hidden md:block'>
       <ul className='flex [&>li*:first-child]:ml-0   [&>li>a]:font-secondary [&>li>a]:text-[14px] [&>li>a]:font-[600] [&>li>a]:text-[rgb(138,43,226)] '>
         <li>
           <ScrollLink

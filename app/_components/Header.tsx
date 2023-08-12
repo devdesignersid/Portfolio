@@ -34,17 +34,12 @@ export default function Header() {
         }}
         size={32}
       />
-      {isMobile ? (
-        <>
-          <HamburgerButton
-            isOpen={isMobileNavOpen}
-            handleClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
-          />
-          <MobileNav isOpen={isMobileNavOpen} />
-        </>
-      ) : (
-        <Navbar />
-      )}
+      <HamburgerButton
+        isOpen={isMobileNavOpen}
+        handleClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
+      />
+      <MobileNav isOpen={isMobileNavOpen} />
+      <Navbar />
     </header>
   );
 }
