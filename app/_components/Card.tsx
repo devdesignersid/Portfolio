@@ -32,7 +32,7 @@ export default function Card({
   }
 
   return (
-    <div className='flex min-h-[132px] w-full cursor-pointer items-center rounded bg-portfolio-backgroundHighlight px-medium py-medium shadow-md hover:scale-105'>
+    <div className='flex w-full cursor-pointer items-center rounded bg-portfolio-backgroundHighlight px-medium py-large shadow-md hover:scale-105'>
       <div className='max-h-[96px] min-w-[96px] rounded bg-portfolio-backgroundHighlight'>
         <Image
           className='h-[96px] w-[96px] rounded'
@@ -42,12 +42,12 @@ export default function Card({
           alt={`${title}-thumbnail`}
         />
       </div>
-      <div className=' relative ml-large flex max-h-[96px] min-w-0 flex-col'>
+      <div className=' relative ml-large flex min-w-0 flex-col'>
         <p className='mb-[4px] font-tertiary font-[600] text-portfolio-text'>
           {title}
         </p>
 
-        <p className='mb-small line-clamp-2 overflow-hidden text-ellipsis font-tertiary text-[14px] text-portfolio-text'>
+        <p className=' mb-small line-clamp-2 block overflow-hidden text-ellipsis font-tertiary text-[14px] text-portfolio-text'>
           {description}
         </p>
 
@@ -55,7 +55,7 @@ export default function Card({
           className={`${tagsListBaseStyle} ${
             tags.length > numOfTagsToBeDisplayed &&
             '[&>li:last-child]:before:content-[""]'
-          }  line-clamp-1 min-w-0`}
+          }  line-clamp-1 `}
         >
           {tagElems}
           {tags.length > numOfTagsToBeDisplayed && (
