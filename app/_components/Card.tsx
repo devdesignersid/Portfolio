@@ -32,7 +32,7 @@ export default function Card({
   }
 
   return (
-    <div className='flex h-[132px] w-full cursor-pointer items-center rounded bg-portfolio-backgroundHighlight px-medium py-medium shadow-md hover:scale-105'>
+    <div className='flex min-h-[132px] w-full cursor-pointer items-center rounded bg-portfolio-backgroundHighlight px-medium py-medium shadow-md hover:scale-105'>
       <div className='max-h-[96px] min-w-[96px] rounded bg-portfolio-backgroundHighlight'>
         <Image
           className='h-[96px] w-[96px] rounded'
