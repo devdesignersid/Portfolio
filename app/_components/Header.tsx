@@ -6,11 +6,12 @@ import Navbar from './Navbar';
 import Logo from './Logo';
 import HamburgerButton from './HamburgerButton';
 import MobileNav from './MobileNav';
+import useMobile from '../_hooks/useMobile';
 
 export default function Header() {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useMobile();
 
   useEffect(() => {
     if (isDarkMode) {
@@ -19,18 +20,6 @@ export default function Header() {
       document.documentElement.classList.remove('dark');
     }
   }, [isDarkMode]);
-
-  useEffect(() => {
-    const updateMobile = () => {
-      setIsMobile(window.innerWidth < 576);
-    };
-
-    updateMobile();
-    window.addEventListener('resize', updateMobile);
-    return () => {
-      window.removeEventListener('resize', updateMobile);
-    };
-  }, []);
 
   return (
     <header className='sticky top-0 z-50 flex w-full items-center justify-between bg-portfolio-background px-large py-large md:px-[32px]'>
