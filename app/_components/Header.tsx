@@ -9,20 +9,8 @@ import MobileNav from './MobileNav';
 import useThemeDetector from '../_hooks/useThemeDetector';
 
 export default function Header() {
-  const [mounted, setIsMounted] = useState(false);
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const [isSystemDarkTheme] = useThemeDetector();
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (mounted) {
-      setIsDarkMode(!!isSystemDarkTheme);
-    }
-  }, [mounted]);
+  const [isDarkMode, setIsDarkMode] = useState(!!useThemeDetector());
 
   useEffect(() => {
     if (isDarkMode) {

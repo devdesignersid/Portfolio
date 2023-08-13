@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Merriweather, Nunito, Heebo } from 'next/font/google';
+import { ClientHofc } from './_components';
 
 const primaryFont = Merriweather({
   subsets: ['latin'],
@@ -41,7 +42,7 @@ export default function RootLayout({
           tertiaryFont.variable,
         ].join(' ')}
       >
-        {children}
+        <ClientHofc>{children}</ClientHofc>
       </body>
     </html>
   );
