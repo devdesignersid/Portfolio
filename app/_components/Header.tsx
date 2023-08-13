@@ -6,12 +6,23 @@ import Navbar from './Navbar';
 import Logo from './Logo';
 import HamburgerButton from './HamburgerButton';
 import MobileNav from './MobileNav';
-import useMobile from '../_hooks/useMobile';
+import useThemeDetector from '../_hooks/useThemeDetector';
 
 export default function Header() {
+  const [mounted, setIsMounted] = useState(false);
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const isMobile = useMobile();
+  const [isSystemDarkTheme] = useThemeDetector();
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (mounted) {
+      setIsDarkMode(!!isSystemDarkTheme);
+    }
+  }, [mounted]);
 
   useEffect(() => {
     if (isDarkMode) {
