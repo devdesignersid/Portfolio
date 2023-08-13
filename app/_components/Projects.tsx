@@ -4,12 +4,14 @@ import React, { useState } from 'react';
 import TagSelector from './TagSelector';
 import CardsView from './CardsView';
 import Card from './Card';
+import openInNewTab from '../_utils/openInNewTab';
 
 type Project = {
   title: string;
   description: string;
   thumbnail: string;
   tags: string[];
+  url: string;
 };
 
 export default function Projects() {
@@ -20,6 +22,7 @@ export default function Projects() {
       thumbnail:
         'https://cdn3d.iconscout.com/3d/free/thumb/free-github-5622954-4684832.png',
       tags: ['NextJs', 'TailwindCss', 'React', 'Typescript', 'Vercel'],
+      url: 'https://github.com/devdesignersid/portfolio',
     },
     {
       title: 'Pulsebase',
@@ -27,6 +30,7 @@ export default function Projects() {
       thumbnail:
         'https://cdn3d.iconscout.com/3d/free/thumb/free-github-5622954-4684832.png',
       tags: ['NestJs', 'MikrOrm', 'Node', 'Postgres', 'Typescript'],
+      url: 'https://github.com/devdesignersid/pulsebase',
     },
   ];
 
@@ -58,7 +62,7 @@ export default function Projects() {
               project.tags.some((tag) => selectedTags.includes(tag))
             )
             .map(function (
-              { title, description, thumbnail, tags: projectTags },
+              { title, description, thumbnail, tags: projectTags, url },
               index
             ) {
               return (
@@ -68,6 +72,7 @@ export default function Projects() {
                   description={description}
                   thumbnail={thumbnail}
                   tags={projectTags}
+                  onClick={() => openInNewTab(url)}
                 />
               );
             })}

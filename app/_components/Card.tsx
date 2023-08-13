@@ -9,6 +9,7 @@ type CardProps = {
   description: string;
   thumbnail: string;
   tags: string[];
+  onClick: () => void;
 };
 
 export default function Card({
@@ -16,6 +17,7 @@ export default function Card({
   description,
   tags = [],
   thumbnail,
+  onClick,
 }: CardProps) {
   const tagsListBaseStyle = `flex flex-wrap text-[14px] [&>li:last-child]:mr-0  [&>li:last-child]:after:content-[""]  [&>li]:mr-[2px] [&>li]:before:content-["#"] [&>li]:after:content-[",_"]`;
   const tagElems = [];
@@ -32,7 +34,10 @@ export default function Card({
   }
 
   return (
-    <div className='flex w-full cursor-pointer items-center rounded bg-portfolio-backgroundHighlight px-medium py-large shadow-md hover:scale-105'>
+    <div
+      className='flex w-full cursor-pointer items-center rounded bg-portfolio-backgroundHighlight px-medium py-large shadow-md hover:scale-105'
+      onClick={onClick}
+    >
       <div className='max-h-[96px] min-w-[96px] rounded bg-portfolio-backgroundHighlight'>
         <Image
           className='h-[96px] w-[96px] rounded'
